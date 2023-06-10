@@ -668,7 +668,7 @@ func NewAwsInstanceInvalidTypeRule() *AwsInstanceInvalidTypeRule {
 			"m6idn.metal",
 			"r6in.metal",
 			"r6idn.metal",
-			"inf2.xlarge",
+     	"inf2.xlarge",
 			"inf2.8xlarge",
 			"inf2.24xlarge",
 			"inf2.48xlarge",
