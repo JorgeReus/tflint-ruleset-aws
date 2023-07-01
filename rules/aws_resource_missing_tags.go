@@ -90,7 +90,7 @@ func (r *AwsResourceMissingTagsRule) getProviderLevelTags(runner tflint.Runner) 
 		} else {
 			err := runner.EvaluateExpr(providerAttr.Expr, func(alias string) error {
 				providerAlias = alias
-        // Init the provider reference even if it doesn't have tags
+				// Init the provider reference even if it doesn't have tags
 				allProviderTags[alias] = nil
 				return nil
 			}, nil)
@@ -188,16 +188,13 @@ func (r *AwsResourceMissingTagsRule) Check(runner tflint.Runner) error {
 					"Walk `%s` attribute",
 					resource.Labels[0]+"."+resource.Labels[1]+"."+tagsAttributeName,
 				)
-				// Since the evlaluateExpr, overrides k/v pairs, we need to re-copy the tags
-				resourceTagsAux := make(map[string]string)
 
-				err := runner.EvaluateExpr(attribute.Expr, func(val map[string]string) error {
-					resourceTagsAux = val
+				err := runner.EvaluateExpr(attribute.Expr, func(evaluatedTags map[string]string) error {
+					// Since the evlaluateExpr, overrides k/v pairs, we need to re-copy the tags
+					maps.Copy(resourceTags, evaluatedTags)
+					r.emitIssue(runner, resourceTags, config, attribute.Expr.Range())
 					return nil
 				}, nil)
-
-				maps.Copy(resourceTags, resourceTagsAux)
-				r.emitIssue(runner, resourceTags, config, attribute.Expr.Range())
 
 				if err != nil {
 					return err
