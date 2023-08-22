@@ -1,3 +1,51 @@
+## 0.26.0 (2023-08-14)
+
+### Breaking Changes
+
+- [#531](https://github.com/terraform-linters/tflint-ruleset-aws/pull/531): Update AWS provider/module and generated content
+  - Removed `aws_budgets_budget_invalid_name` rule
+
+### BugFixes
+
+- [#530](https://github.com/terraform-linters/tflint-ruleset-aws/pull/530): resource_missing_tags: Fix panic for unknown and null values ([@wata727](https://github.com/wata727))
+
+### Chores
+
+- [#529](https://github.com/terraform-linters/tflint-ruleset-aws/pull/529): Bump golang.org/x/net from 0.12.0 to 0.14.0
+
+## 0.25.0 (2023-07-29)
+
+### Enhancements
+
+- [#514](https://github.com/terraform-linters/tflint-ruleset-aws/pull/514): Update AWS provider/module and generated content
+
+### BugFixes
+
+- [#526](https://github.com/terraform-linters/tflint-ruleset-aws/pull/526): Bump tflint-plugin-sdk to v0.18.0 ([@wata727](https://github.com/wata727))
+
+### Chores
+
+- [#523](https://github.com/terraform-linters/tflint-ruleset-aws/pull/523): release: Add raw binary entries to checksums.txt ([@wata727](https://github.com/wata727))
+
+## 0.24.3 (2023-07-22)
+
+- [#517](https://github.com/terraform-linters/tflint-ruleset-aws/pull/517): resource_missing_tags: rewrite to only consider keys ([@bendrucker](https://github.com/bendrucker))
+- [#519](https://github.com/terraform-linters/tflint-ruleset-aws/pull/519): resource_missing_tags: Ignore non-existent provider aliases ([@wata727](https://github.com/wata727))
+
+## 0.24.2 (2023-07-19)
+
+### Enhancements
+
+- [#505](https://github.com/terraform-linters/tflint-ruleset-aws/pull/505) [#513](https://github.com/terraform-linters/tflint-ruleset-aws/pull/513): Update AWS provider/module and generated content
+
+### BugFixes
+
+- [#511](https://github.com/terraform-linters/tflint-ruleset-aws/pull/511): fix: Fixed regression in tags with dynamic values ([@JorgeReus](https://github.com/JorgeReus))
+
+### Chores
+
+- [#512](https://github.com/terraform-linters/tflint-ruleset-aws/pull/512): Bump golang.org/x/net from 0.11.0 to 0.12.0
+
 ## 0.24.1 (2023-07-01)
 
 - [#508](https://github.com/terraform-linters/tflint-ruleset-aws/pull/508): fix: Fixed the error 'Provider doesn't exist' and the provider exist ([@JorgeReus](https://github.com/JorgeReus))
